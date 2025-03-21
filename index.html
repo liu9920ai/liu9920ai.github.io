@@ -1,8 +1,146 @@
-<p>Hello 大家好</p>
-<p>我是霸都丶傲天，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>刘广扬 | 人工智能开发者</title>
+    <style>
+        :root {
+            --primary-color: #2C3E50;  /* 专业深蓝 */
+            --secondary-color: #3498DB;  /* 科技蓝 */
+        }
 
-<ul>
-  <li> <a href="https://www.zhihu.com/people/AJLoveChina">知乎</a> </li>
-  <li> <a href="http://hejie.nigeerhuo.com">我的博客(已经不更细了,现在在知乎写文章)</a> </li>
-</ul>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 30px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        /* 头部区域 */
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .header h1 {
+            color: var(--primary-color);
+            font-size: 2.5em;
+            margin: 10px 0;
+        }
+        .contact-bar {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin: 15px 0;
+        }
+        .contact-bar a {
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* 项目展示 */
+        .project {
+            margin-bottom: 35px;
+            padding: 20px;
+            border-left: 4px solid var(--secondary-color);
+            background: #f8fafc;
+        }
+        .project h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: #e3f2fd;
+            color: var(--secondary-color);
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            .contact-bar { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 头部信息 -->
+        <div class="header">
+            <h1>刘广扬</h1>
+            <div class="contact-bar">
+                <a href="mailto:2404521002@qq.com">📧 2404521002@qq.com</a>
+                <a href="tel:+8616638940690">📱 (+86) 166 3894 0690</a>
+                <a href="https://github.com/liu9920ai" target="_blank">💻 GitHub</a>
+            </div>
+        </div>
+
+        <!-- 教育背景 -->
+        <section>
+            <h2>🎓 教育背景</h2>
+            <div class="project">
+                <h3>吉林大学人工智能专业 | 本科（2020.9 - 2024.7）</h3>
+                <span class="badge">985/双一流高校</span>
+                <p>核心课程：机器学习与模式识别、深度学习、计算机视觉、机器人运动学</p>
+            </div>
+        </section>
+
+        <!-- 项目经历 -->
+        <section>
+            <h2>🚀 项目经历</h2>
+            
+            <!-- 项目1 -->
+            <div class="project">
+                <h3>面向自动驾驶的ViT模型对抗补丁攻击研究 | 独立项目</h3>
+                <span class="badge">PyTorch</span>
+                <span class="badge">计算机视觉</span>
+                <span class="badge">对抗攻击</span>
+                <ul>
+                    <li>优化ViT训练流程，在TSRD数据集实现<b>99.4%分类准确率</b></li>
+                    <li>改进EoT对抗补丁生成算法，攻击成功率<b>100%</b>（补丁占比10%）</li>
+                    <li>成果：学院优秀毕业论文 | 代码开源</li>
+                </ul>
+            </div>
+
+            <!-- 项目2 -->
+            <div class="project">
+                <h3>基于ResNet的交通标志检测系统 | 省级大创项目</h3>
+                <span class="badge">ResNet50</span>
+                <span class="badge">嵌入式部署</span>
+                <span class="badge">OpenCV</span>
+                <ul>
+                    <li>实现57类交通标志分类检测（TSRD数据集）</li>
+                    <li>参与NVIDIA Jetson TX2嵌入式平台部署</li>
+                    <li>成果：校级大创优秀奖</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 技术能力 -->
+        <section>
+            <h2>🛠️ 技术能力</h2>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <span class="badge">PyTorch</span>
+                <span class="badge">Python/C++</span>
+                <span class="badge">计算机视觉</span>
+                <span class="badge">模型优化</span>
+                <span class="badge">Linux/ROS</span>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
