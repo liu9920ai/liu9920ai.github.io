@@ -1,36 +1,28 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>我的个人主页</title>
-    <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
-        .container { max-width: 800px; margin: 0 auto; }
-        nav a { margin-right: 20px; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <nav>
-            <a href="#about">简介</a>
-            <a href="#projects">项目</a>
-            <a href="#contact">联系</a>
-        </nav>
-        <h1>欢迎来到我的主页！</h1>
-        <section id="about">
-            <h2>关于我</h2>
-            <p>这里写你的个人简介。</p>
-        </section>
-        <section id="projects">
-            <h2>我的项目</h2>
-            <ul>
-                <li><a href="#">项目1</a></li>
-                <li><a href="#">项目2</a></li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>联系我</h2>
-            <p>邮箱：your.email@example.com</p>
-        </section>
-    </div>
-</body>
-</html>
+# Liu 的个人主页
+
+🚀 基于 GitHub Pages 搭建的静态个人主页，展示我的技术项目、学习笔记和联系方式。
+
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-success?style=flat&logo=github)
+![License](https://img.shields.io/github/license/liu9920ai/liu9920ai.github.io)
+
+## 🌐 快速访问
+**[点击访问主页](https://liu9920ai.github.io)**
+
+---
+
+## ✨ 特性
+- **响应式设计**：适配 PC、平板和手机
+- **极简风格**：原生 HTML/CSS 实现，无冗余依赖
+- **模块化布局**：简介、项目展示、联系方式清晰分区
+
+## 🛠️ 技术栈
+- **核心语言**: HTML5, CSS3
+- **部署工具**: GitHub Pages
+- **版本控制**: Git & GitHub
+
+---
+
+## 🔧 本地运行
+1. 克隆仓库：
+   ```bash
+   git clone https://github.com/liu9920ai/liu9920ai.github.io.git
