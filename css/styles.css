@@ -7,141 +7,54 @@
     --border: rgba(42,57,80,0.1);
 }
 
+html,
 body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
     font-family: 'Inter', system-ui;
     line-height: 1.6;
     color: var(--text);
     background: var(--bg);
     padding: 20px;
 }
-html, body {
-    overflow-x: hidden; /* 只禁用横向滚动 */
-    overflow-y: auto;   /* 保持纵向滚动 */
-    -webkit-overflow-scrolling: touch; /* 启用iOS弹性滚动 */
-}
 
-.container {
-    /* 确保容器不限制溢出 */
-    overflow: visible;
-    min-height: 100vh; /* 关键：保证容器高度足够 */
-}
-
-/* 修正星星容器 */
-#star-container {
-    pointer-events: none; /* 确保不阻挡触摸事件 */
-    /* 其他原有样式保持不变 */
-}
-
-/* 移除可能存在的溢出限制 */
-.project-card, .info-card {
-    overflow: visible !important;
-}
-/* styles.css 新增样式 */
-/* 确保a标签保持正常点击状态 */
-a {
-    position: relative;
-    z-index: 10000; /* 高于星星容器的9999 */
-}
-
-.skill-matrix {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-}
-
-.skill-category {
-    background: rgba(74,144,226,0.05);
-    padding: 1.2rem;
-    border-radius: 8px;
-}
-
-.skill-category h3 {
-    color: var(--accent);
-    margin-bottom: 0.8rem;
-    font-size: 1.1rem;
-}
-
-/* 新增技能等级标签 */
-.badge.skill-pro {
-    background: linear-gradient(135deg, #4A90E2 0%, #2A3950 100%);
-}
-
-/* 项目元信息样式 */
-.project-meta {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 1rem 0;
-    color: var(--text);
-    opacity: 0.8;
-}
-
-.tech-stack {
-    display: flex;
-    gap: 0.6rem;
-}
-
-.tech-tag {
-    background: rgba(74,144,226,0.1);
-    color: var(--accent);
-    padding: 0.3rem 0.8rem;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
-/* 成果展示样式 */
-.achievement {
-    margin-top: 1.2rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.award-tag {
-    background: #4A90E2;
-    color: white;
-    padding: 0.4rem 1rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-}
-
-.code-link {
-    color: var(--accent);
-    text-decoration: none;
-    border-bottom: 1px dashed currentColor;
-}
-
-/* 课程标签优化 */
-.curriculum .skill-tags {
-    margin: 0.8rem 0;
-}
-
-.honors ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.honors li {
-    margin: 0.5rem 0;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-}
-
-/* 其他元素添加点击穿透 */
-.clickable-area {
-    pointer-events: auto;
-    position: relative;
-    z-index: 1;
-}
-
+/* 主容器 */
 .container {
     max-width: 880px;
     margin: 2rem auto;
-    background: white;
     padding: 2.5rem;
+    background: white;
     border-radius: 16px;
     box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    overflow: visible;
+    min-height: 100vh;
+}
+
+/* 星星容器 */
+#star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: visible;
+}
+
+.star {
+    position: fixed;
+    font-size: 24px;
+    animation: star-fade 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transform: translate(-50%, -50%) translate(var(--tx, 0), var(--ty, 0));
+    will-change: transform, opacity;
+}
+
+@keyframes star-fade {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(0); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
 }
 
 /* 头像样式 */
@@ -202,13 +115,15 @@ a {
 }
 
 /* 卡片样式 */
-.info-card, .project-card {
+.info-card, 
+.project-card {
     padding: 1.6rem;
     background: var(--bg);
     border-radius: 12px;
     margin-bottom: 1.5rem;
     border-left: 4px solid var(--accent);
     transition: transform 0.2s, box-shadow 0.2s;
+    overflow: visible;
 }
 
 .project-card:hover {
@@ -241,38 +156,37 @@ a {
     );
     margin: 2.5rem 0;
 }
-/* styles.css */
-/* 新增星星容器样式 */
-#star-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    pointer-events: none;
-    z-index: 9999;
-    overflow: visible;
+
+/* 技能矩阵 */
+.skill-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
 }
 
-/* 修正星星定位 */
-.star {
-    position: fixed;
-    font-size: 24px;
-    animation: star-fade 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    transform: 
-        translate(-50%, -50%)
-        translate(var(--tx, 0), var(--ty, 0));
-    will-change: transform, opacity;
+.skill-category {
+    background: rgba(74,144,226,0.05);
+    padding: 1.2rem;
+    border-radius: 8px;
 }
-@keyframes star-fade {
-    0% { opacity: 1; transform: translate(-50%, -50%) scale(0); }
-    100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
+
+.skill-category h3 {
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
 }
+
 /* 响应式设计 */
 @media (max-width: 768px) {
+    html, body {
+        padding: 10px;
+        touch-action: pan-y;
+    }
+
     .container {
-        padding: 1.5rem;
-        margin: 1rem;
+        padding: 15px;
+        margin: 0;
+        min-height: calc(100vh - 20px);
     }
 
     .header {
@@ -289,23 +203,36 @@ a {
     .contact-bar {
         justify-content: center;
     }
-}
-/* 移动端优化 */
-@media (max-width: 768px) {
-    body {
-        padding: 10px; /* 减少内边距 */
-        touch-action: pan-y; /* 明确允许垂直滚动 */
-    }
 
-    .container {
-        padding: 15px;
-        margin: 0; /* 移除外边距 */
-        min-height: calc(100vh - 20px); /* 动态高度计算 */
-    }
-
-    /* 修复iOS点击延迟 */
     a, button {
-        cursor: pointer;
         -webkit-tap-highlight-color: transparent;
     }
+}
+
+/* 其他组件样式 */
+.tech-stack {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.tech-tag {
+    background: rgba(74,144,226,0.1);
+    color: var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.award-tag {
+    background: #4A90E2;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.code-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
 }
