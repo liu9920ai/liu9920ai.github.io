@@ -1,0 +1,21 @@
+/* 其他页面样式 */
+#star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* 星星动画 */
+.star {
+    position: absolute;
+    font-size: 24px;
+    animation: star-fade 1s ease-out forwards;
+    will-change: transform, opacity; /* 性能优化 */
+}
+
+@keyframes star-fade {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(0); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
+}
