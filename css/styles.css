@@ -21,6 +21,91 @@ a {
     z-index: 10000; /* 高于星星容器的9999 */
 }
 
+.skill-matrix {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.skill-category {
+    background: rgba(74,144,226,0.05);
+    padding: 1.2rem;
+    border-radius: 8px;
+}
+
+.skill-category h3 {
+    color: var(--accent);
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+/* 新增技能等级标签 */
+.badge.skill-pro {
+    background: linear-gradient(135deg, #4A90E2 0%, #2A3950 100%);
+}
+
+/* 项目元信息样式 */
+.project-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 0;
+    color: var(--text);
+    opacity: 0.8;
+}
+
+.tech-stack {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.tech-tag {
+    background: rgba(74,144,226,0.1);
+    color: var(--accent);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* 成果展示样式 */
+.achievement {
+    margin-top: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.award-tag {
+    background: #4A90E2;
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+.code-link {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+}
+
+/* 课程标签优化 */
+.curriculum .skill-tags {
+    margin: 0.8rem 0;
+}
+
+.honors ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.honors li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
 /* 其他元素添加点击穿透 */
 .clickable-area {
     pointer-events: auto;
