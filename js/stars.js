@@ -3,9 +3,9 @@ document.addEventListener('click', createStar);
 document.addEventListener('touchstart', createStar);
 
 function createStar(e) {
-    const x = e.clientX || e.touches[0].clientX;
-    const y = e.clientY || e.touches[0].clientY;
-
+    const x = e.pageX || e.touches[0].pageX;
+    const y = e.pageY || e.touches[0].pageY;
+    
     const star = document.createElement('div');
     star.className = 'star';
     star.style.left = x + 'px';
