@@ -14,19 +14,6 @@
     --dark-bg: #1A1A1A;
     --dark-card-bg: #2D2D2D;
 }
-
-/* 黑夜模式样式 */
-[data-theme="dark"] {
-    --primary: var(--dark-primary);
-    --accent: var(--dark-accent);
-    --text: var(--dark-text);
-    --bg: var(--dark-bg);
-    --card-bg: var(--dark-card-bg);
-    
-    /* 图片亮度调整 */
-    filter: brightness(0.9);
-}
-
 html,
 body {
     overflow-x: hidden;
@@ -39,6 +26,51 @@ body {
     background: var(--bg);
     padding: 20px;
 }
+
+/* 黑夜模式样式 */
+[data-theme="dark"] {
+    --primary: var(--dark-primary);
+    --accent: var(--dark-accent);
+    --text: var(--dark-text);
+    --bg: var(--dark-bg);
+    --card-bg: var(--dark-card-bg);
+    
+    /* 图片亮度调整 */
+    filter: brightness(0.9);
+}
+/* 黑夜模式切换按钮 */
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    background: var(--accent);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: scale(1.1);
+}
+
+.moon { display: none; }
+[data-theme="dark"] .sun { display: none; }
+[data-theme="dark"] .moon { display: block; }
+
+/* 适配黑夜模式图片 */
+[data-theme="dark"] .avatar {
+    filter: brightness(0.85);
+}
+
+
 
 /* 主容器 */
 .container {
