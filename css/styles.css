@@ -1,17 +1,31 @@
 /* styles.css */
 :root {
+    /* 白天模式颜色 */
     --primary: #2A3950;
     --accent: #4A90E2;
     --text: #3C4858;
     --bg: #F8FAFC;
-    --border: rgba(42,57,80,0.1);
+    --card-bg: white;
+    
+    /* 新增黑夜模式变量 */
+    --dark-primary: #E3EAF2;
+    --dark-accent: #6AB0F3;
+    --dark-text: #E0E0E0;
+    --dark-bg: #1A1A1A;
+    --dark-card-bg: #2D2D2D;
 }
-<meta name="viewport" 
-      content="width=device-width, 
-               initial-scale=1.0, 
-               maximum-scale=5.0, 
-               minimum-scale=1.0, 
-               viewport-fit=cover">
+
+/* 黑夜模式样式 */
+[data-theme="dark"] {
+    --primary: var(--dark-primary);
+    --accent: var(--dark-accent);
+    --text: var(--dark-text);
+    --bg: var(--dark-bg);
+    --card-bg: var(--dark-card-bg);
+    
+    /* 图片亮度调整 */
+    filter: brightness(0.9);
+}
 
 html,
 body {
