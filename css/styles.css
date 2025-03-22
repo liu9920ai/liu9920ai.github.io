@@ -121,7 +121,33 @@ body {
     );
     margin: 2.5rem 0;
 }
+/* styles.css */
+/* 新增星星容器样式 */
+#star-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: visible;
+}
 
+/* 修正星星定位 */
+.star {
+    position: fixed;
+    font-size: 24px;
+    animation: star-fade 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    transform: 
+        translate(-50%, -50%)
+        translate(var(--tx, 0), var(--ty, 0));
+    will-change: transform, opacity;
+}
+@keyframes star-fade {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(0); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(2); }
+}
 /* 响应式设计 */
 @media (max-width: 768px) {
     .container {
