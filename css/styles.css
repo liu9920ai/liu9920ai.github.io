@@ -1,4 +1,38 @@
-/* 其他页面样式 */
+/* css/styles.css */
+
+/* 基础变量 */
+:root {
+    --primary-color: #2C3E50;
+    --secondary-color: #3498DB;
+}
+
+/* 全局样式 */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.8;
+    margin: 0;
+    padding: 30px;
+    background: #f8f9fa;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+/* 头部区域 */
+.header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+/* ... 其他完整样式保持原样 ... */
 #star-container {
     position: fixed;
     top: 0;
@@ -16,39 +50,7 @@
     will-change: transform, opacity; /* 性能优化 */
 }
 
-/* 新增教育背景和项目样式 */
-.education, .projects {
-    margin: 40px 0;
-    padding: 25px;
-    background: #f8fafc;
-    border-radius: 8px;
-}
 
-.content-box, .project-card {
-    background: white;
-    padding: 20px;
-    border-radius: 6px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-.tech-tags span {
-    display: inline-block;
-    background: #e3f2fd;
-    color: #3498db;
-    padding: 4px 12px;
-    margin: 5px 5px 5px 0;
-    border-radius: 20px;
-    font-size: 0.9em;
-}
-
-.project-card h3 {
-    color: #2c3e50;
-    margin-top: 0;
-}
-
-.project-card ul {
-    padding-left: 20px;
-}
 
 @keyframes star-fade {
     0% { opacity: 1; transform: translate(-50%, -50%) scale(0); }
