@@ -7,12 +7,11 @@ document.addEventListener('click', function(e) {
 });
 
 document.addEventListener('touchstart', function(e) {
-    // 移动端处理逻辑
     if (!e.target.closest('a')) {
-        e.preventDefault(); // 防止触摸滚动干扰
+        // 移除preventDefault调用
         createStar(e);
     }
-}, { passive: false });
+}, { passive: true }); // 改为passive模式
 
 function createStar(e) {
     // 获取精确坐标（包含滚动偏移）
