@@ -7,12 +7,47 @@
     z-index: 9999;
 }
 
+
 /* 星星动画 */
 .star {
     position: absolute;
     font-size: 24px;
     animation: star-fade 1s ease-out forwards;
     will-change: transform, opacity; /* 性能优化 */
+}
+
+/* 新增教育背景和项目样式 */
+.education, .projects {
+    margin: 40px 0;
+    padding: 25px;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
+.content-box, .project-card {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.tech-tags span {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #3498db;
+    padding: 4px 12px;
+    margin: 5px 5px 5px 0;
+    border-radius: 20px;
+    font-size: 0.9em;
+}
+
+.project-card h3 {
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.project-card ul {
+    padding-left: 20px;
 }
 
 @keyframes star-fade {
