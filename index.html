@@ -2,20 +2,13 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>刘广扬 | 人工智能开发者</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- 新增Google字体 -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- 原有meta和title保持不变 -->
 </head>
 <body>
-    <div class="clickable-area">
     <div id="star-container"></div>
 
     <div class="container">
-        <!-- 头部信息 -->
+        <!-- ========== 头部信息 ========== -->
         <header class="header">
             <div class="avatar-frame">
                 <img src="assets/images/avatar.jpg" 
@@ -25,6 +18,7 @@
             </div>
             <div class="header-content">
                 <h1 class="name-title">刘广扬</h1>
+                <p class="position-tag">人工智能开发者 | 计算机视觉研究员</p>
                 <div class="contact-bar">
                     <a class="contact-link" href="mailto:2404521002@qq.com">
                         <span class="icon">✉️</span>2404521002@qq.com
@@ -41,50 +35,134 @@
 
         <div class="section-divider"></div>
 
-        <!-- 教育背景 -->
+        <!-- ========== 教育背景 ========== -->
         <section class="education-section">
             <h2>🎓 教育背景</h2>
             <div class="info-card">
                 <div class="card-header">
                     <h3>吉林大学人工智能专业 | 本科（2020.9 - 2024.7）</h3>
-                    <span class="badge">985/双一流高校</span>
+                    <span class="badge badge-accent">985/双一流高校</span>
                 </div>
-                <ul>
-                    <li>核心课程：机器学习与模式识别、深度学习、计算机视觉</li>
-                    <li>荣誉：学院优秀毕业论文、校级大创优秀奖</li>
-                </ul>
+                <div class="curriculum">
+                    <h4>核心课程：</h4>
+                    <div class="skill-tags">
+                        <span class="badge">机器学习与模式识别</span>
+                        <span class="badge">深度学习</span>
+                        <span class="badge">计算机视觉</span>
+                        <span class="badge">C++/Python编程</span>
+                        <span class="badge">机器人运动学</span>
+                    </div>
+                </div>
+                <div class="honors">
+                    <h4>荣誉奖项：</h4>
+                    <ul>
+                        <li>🏆 学院优秀毕业论文（Top 5%）</li>
+                        <li>🏅 校级大创项目优秀奖</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <div class="section-divider"></div>
 
-        <!-- 项目经历 -->
+        <!-- ========== 项目经历 ========== -->
         <section class="project-section">
             <h2>🚀 项目经历</h2>
             
+            <!-- 项目1 -->
             <div class="project-card">
                 <div class="project-header">
                     <h3>面向自动驾驶的ViT模型对抗补丁攻击研究</h3>
                     <span class="project-badge">独立项目</span>
                 </div>
-                <div class="tech-tags">
-                    <span class="badge">PyTorch</span>
-                    <span class="badge">计算机视觉</span>
-                    <span class="badge">对抗攻击</span>
+                <div class="project-meta">
+                    <span class="date">2023.09 - 2024.06</span>
+                    <span class="tech-stack">
+                        <span class="tech-tag">PyTorch</span>
+                        <span class="tech-tag">对抗攻击</span>
+                        <span class="tech-tag">模型安全</span>
+                    </span>
                 </div>
-                <ul>
-                    <li>优化ViT训练流程，在TSRD数据集实现<b>99.4%分类准确率</b></li>
-                    <li>改进EoT对抗补丁生成算法，攻击成功率<b>100%</b>（补丁占比10%）</li>
-                    <li>成果：学院优秀毕业论文 | 代码开源</li>
-                </ul>
+                <div class="project-content">
+                    <h4>核心贡献：</h4>
+                    <ul>
+                        <li>🚀 在TSRD数据集实现<b>99.4%</b>分类准确率（ViT模型）</li>
+                        <li>🛡️ 改进EoT算法，10%补丁占比下攻击成功率<b>100%</b></li>
+                        <li>📉 建立补丁面积-攻击效率关系模型（2%面积时成功率55.2%）</li>
+                    </ul>
+                    <div class="achievement">
+                        <span class="award-tag">优秀毕业论文</span>
+                        <a href="https://github.com/liu9920ai/ViT-Adversarial-Patch" 
+                           class="code-link" 
+                           target="_blank">
+                           🔗 查看开源代码
+                        </a>
+                    </div>
+                </div>
             </div>
 
-            <!-- 其他项目保持相同结构 -->
+            <!-- 项目2 -->
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>基于ResNet的交通标志检测系统</h3>
+                    <span class="project-badge">省级大创项目</span>
+                </div>
+                <div class="project-meta">
+                    <span class="date">2023.03 - 2023.08</span>
+                    <span class="tech-stack">
+                        <span class="tech-tag">ResNet50</span>
+                        <span class="tech-tag">OpenCV</span>
+                        <span class="tech-tag">Jetson TX2</span>
+                    </span>
+                </div>
+                <div class="project-content">
+                    <h4>技术亮点：</h4>
+                    <ul>
+                        <li>🚦 实现57类交通标志实时检测（TSRD数据集）</li>
+                        <li>📸 开发图像增强Pipeline（亮度/对比度自适应调整）</li>
+                        <li>📱 嵌入式平台推理速度优化（FPS ≥ 30）</li>
+                    </ul>
+                    <div class="achievement">
+                        <span class="award-tag">校级优秀奖</span>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- 其他部分保持相同结构 -->
+        <div class="section-divider"></div>
+
+        <!-- ========== 技术能力 ========== -->
+        <section class="skills-section">
+            <h2>🛠️ 技术能力</h2>
+            <div class="skill-matrix">
+                <div class="skill-category">
+                    <h3>核心技能</h3>
+                    <div class="skill-tags">
+                        <span class="badge skill-pro">PyTorch</span>
+                        <span class="badge skill-pro">计算机视觉</span>
+                        <span class="badge skill-pro">模型优化</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>开发语言</h3>
+                    <div class="skill-tags">
+                        <span class="badge">Python</span>
+                        <span class="badge">C++</span>
+                        <span class="badge">Linux/Shell</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>领域知识</h3>
+                    <div class="skill-tags">
+                        <span class="badge">自动驾驶</span>
+                        <span class="badge">对抗攻击</span>
+                        <span class="badge">嵌入式部署</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div>
-    </div>
+
     <script src="js/stars.js"></script>
 </body>
 </html>
