@@ -1,6 +1,18 @@
 // stars.js
-document.addEventListener('click', createStar);
-document.addEventListener('touchstart', createStar);
+document.addEventListener('click', function(e) {
+    // 排除所有a标签及其内部元素
+    if (!e.target.closest('a')) {
+        createStar(e);
+    }
+});
+
+document.addEventListener('touchstart', function(e) {
+    // 移动端处理逻辑
+    if (!e.target.closest('a')) {
+        e.preventDefault(); // 防止触摸滚动干扰
+        createStar(e);
+    }
+}, { passive: false });
 
 function createStar(e) {
     // 获取精确坐标（包含滚动偏移）
