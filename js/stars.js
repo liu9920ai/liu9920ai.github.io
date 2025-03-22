@@ -71,3 +71,25 @@ function createStar(e) {
         setTimeout(() => star.remove(), 300);
     }, 700);
 }
+// 黑夜模式切换功能
+const themeToggle = document.getElementById('theme-toggle');
+const savedTheme = localStorage.getItem('theme');
+
+// 初始化主题
+if (savedTheme) {
+    document.documentElement.setAttribute('data-theme', savedTheme);
+}
+
+themeToggle.addEventListener('click', () => {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // 添加切换动画
+    themeToggle.style.transform = 'scale(0.9)';
+    setTimeout(() => {
+        themeToggle.style.transform = 'scale(1)';
+    }, 100);
+});
