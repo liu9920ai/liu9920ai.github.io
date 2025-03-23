@@ -60,6 +60,20 @@ body {
 .theme-btn:hover {
     transform: scale(1.1);
 }
+.section-divider {
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 50%,  /* 修改为使用当前文字色 */
+        rgba(255,255,255,0) 100%
+    );
+}
+[data-theme="dark"] .section-divider {
+    background: linear-gradient(90deg, 
+        rgba(0,0,0,0) 0%,
+        rgba(0,0,0,0.3) 50%,
+        rgba(0,0,0,0) 100%
+    );
+}
 
 .moon { display: none; }
 [data-theme="dark"] .sun { display: none; }
