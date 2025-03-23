@@ -27,6 +27,18 @@ body {
     padding: 20px;
 }
 
+/* 主容器 */
+.container {
+    max-width: 880px;
+    margin: 2rem auto;
+    padding: 2.5rem;
+    background: var(--card-bg);
+    border-radius: 16px;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+    overflow-y: visible; /* 禁用内部滚动 */
+    min-height: 100vh;   /* 全屏高度 */
+}
+
 /* 黑夜模式样式 */
 [data-theme="dark"] {
     --primary: var(--dark-primary);
@@ -86,17 +98,7 @@ body {
 
 
 
-/* 主容器 */
-.container {
-    max-width: 880px;
-    margin: 2rem auto;
-    padding: 2.5rem;
-    background: var(--card-bg);
-    border-radius: 16px;
-    box-shadow: 0 6px 24px rgba(0,0,0,0.06);
-    overflow: visible;
-    min-height: 100vh;
-}
+
 
 /* 星星容器 */
 #star-container {
